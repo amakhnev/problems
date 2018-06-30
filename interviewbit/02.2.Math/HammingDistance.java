@@ -1,12 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HammingDistance {
 
     public static void main(String[] args) {
-        List<Integer> A = new ArrayList<>();
-        A.add(96);
-        A.add(2);
+        List<Integer> A = new ArrayList<>(Arrays.asList(96,2));
         System.out.println("Result = " + new HammingDistance().hammingDistance(A));
     }
 

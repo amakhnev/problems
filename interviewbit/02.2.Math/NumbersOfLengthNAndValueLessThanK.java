@@ -1,13 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class NumbersOfLengthNAndValueLessThanK {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> A = new ArrayList<Integer>();
-        A.add(0);
-        A.add(1);
-        A.add(5);
+        ArrayList<Integer> A = new ArrayList<>(Arrays.asList(0,1,5));
         System.out.println("Result = " + new NumbersOfLengthNAndValueLessThanK().solve(A, 1, 2)); // expected 2
 
 
