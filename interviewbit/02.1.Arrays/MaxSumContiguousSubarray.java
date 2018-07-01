@@ -1,14 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MaxSumContiguousSubarray {
 
     public static void main(String[] args) {
-        ArrayList<Integer> a = new ArrayList<>();
-
-        a.add(-150);
-//        a.add(1); a.add(-3);a.add(4); a.add(-1);
-//        a.add(2); a.add(1);a.add(-5); a.add(4);
+        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(-1,1,-1,1,-3,4,-1,2,1,-5,4));
 
         System.out.println("Result = " + new MaxSumContiguousSubarray().maxSubArray(a));
     }
