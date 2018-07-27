@@ -19,18 +19,15 @@ public class MinimizeTheAbsoluteDifference {
         while (i < A.size() && j < B.size() && k < C.size()) {
             minDiff = Math.min(minDiff, Math.max(Math.max(A.get(i), B.get(j)), C.get(k)) - Math.min(Math.min(A.get(i), B.get(j)), C.get(k)));
 
-            int minA = (i < A.size()) ? A.get(i) : Integer.MAX_VALUE;
-            int minB = (j < B.size()) ? B.get(j) : Integer.MAX_VALUE;
-            int minC = (k < C.size()) ? C.get(k) : Integer.MAX_VALUE;
-            if (minA <= Math.min(minB, minC)) {
+            if (A.get(i) <= Math.min(B.get(j), C.get(k))) {
                 i++;
                 continue;
             }
-            if (minB <= Math.min(minA, minC)) {
+            if (B.get(j) <= Math.min(A.get(i), C.get(k))) {
                 j++;
                 continue;
             }
-            if (minC <= Math.min(minA, minB)) {
+            if (C.get(k) <= Math.min(A.get(i), B.get(j))) {
                 k++;
                 continue;
             }
