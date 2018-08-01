@@ -1,4 +1,7 @@
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ListNode {
     public int val;
@@ -13,16 +16,22 @@ public class ListNode {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        Set<ListNode> nodes = new HashSet<>(); // quick solution to detect cycle. Needs extra space though.
         ListNode temp = this;
-        while (temp!=null){
+        while (temp!=null&&!nodes.contains(temp)){
+            nodes.add(temp);
             sb.append(temp.val);
             if (temp.next!=null){
                 sb.append(" -> ");
             }
             temp = temp.next;
         }
+        if (temp!=null){
+            sb.append(temp.val+" (cycle)");
+        }
         return sb.toString();
     }
+
 
 
     public static ListNode create(List<Integer> a){
