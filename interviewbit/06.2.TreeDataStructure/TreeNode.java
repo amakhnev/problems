@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TreeNode implements TreePrinter.PrintableNode {
     int val;
@@ -25,6 +24,47 @@ public class TreeNode implements TreePrinter.PrintableNode {
     @Override
     public String getText() {
         return "" + val;
+    }
+
+    public static String getCustomInputString(TreeNode node) {
+        return getCustomInputString(node, " ", true);
+    }
+
+    public static String getCustomInputString(TreeNode node, String separator, boolean addCount) {
+        List<Integer> output = getCustomInput(node);
+        StringBuilder sb = new StringBuilder();
+        if (addCount) {
+            sb.append(output.size());
+            sb.append(separator);
+        }
+
+        for (int i = 0; i < output.size(); i++) {
+            sb.append(output.get(i));
+            if (i < output.size() - 1) {
+                sb.append(separator);
+            }
+        }
+        return sb.toString();
+    }
+
+    public static List<Integer> getCustomInput(TreeNode node) {
+        List<Integer> output = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            output.add(curr.val);
+            if (curr.val > 0) {
+                queue.offer(curr.left != null ? curr.left : new TreeNode(-1));
+                queue.offer(curr.right != null ? curr.right : new TreeNode(-1));
+            }
+        }
+
+        return output;
+    }
+
+    public static TreeNode createTree(Integer... nums) {
+        return createTree(Arrays.asList(nums));
     }
 
     public static TreeNode createTree(List<Integer> input) {
