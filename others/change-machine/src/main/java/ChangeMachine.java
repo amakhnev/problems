@@ -37,19 +37,18 @@ public class ChangeMachine {
 
         System.out.println(changeMachine.change(13));
         System.out.println(changeMachine.change(574));
-//        System.out.println(changeMachine.change(0));
-//        System.out.println(changeMachine.change(-23));
+
 
         System.out.println(changeMachine.change(Arrays.asList(200, 100, 50, 20, 10, 5, 2, 1), 13));
         System.out.println(changeMachine.change(Arrays.asList(200, 100, 20, 200, 10, 5, 50, 2, 1, 1, 2), 574));
 
 //        System.out.println(changeMachine.change(Arrays.asList(5, 2, 2, 2), 6));
-//        System.out.println(changeMachine.change(Arrays.asList(5, 2, 2, 2, 1), 6));
+        System.out.println(changeMachine.change(Arrays.asList(5, 2, 2, 2, 1), 6));
 //        System.out.println(changeMachine.change(Arrays.asList(200, 100, 20, 200, 10, 5, 50, 2), 574));
 
 //        System.out.println(changeMachine.change(Arrays.asList(200, 100, 20, 200, 10, 5, 50, 2, 1, 1, 2), 0));
 //        System.out.println(changeMachine.change(Arrays.asList(200, 100, 20, 200, 10, 5, 50, 2, 1, 1, 2), -10));
-//        System.out.println(changeMachine.change(Arrays.asList(), 574));
+        System.out.println(changeMachine.change(Arrays.asList(200), 574));
     }
 
     /**
@@ -61,7 +60,7 @@ public class ChangeMachine {
      */
     public List<Integer> change(int value) {
         if (value <= 0) {
-            throw new IllegalArgumentException("Value (" + value + ") should be positive. ");
+            throw new IllegalArgumentException("Value (" + value + ") should be positive.");
         }
 
         List<Integer> result = new ArrayList<>();
@@ -90,7 +89,7 @@ public class ChangeMachine {
         if (value <= 0) {
             throw new IllegalArgumentException("Value (" + value + ") should be positive.");
         }
-        if (till == null || till.size() == 0) {
+        if (till == null || till.isEmpty()) {
             throw new IllegalArgumentException("Till can't be empty.");
         }
         for (int num : till) { // check if all coins are coins indeed. Can delete from till, but follow Fail-Fast approach.
@@ -120,7 +119,7 @@ public class ChangeMachine {
         }
 
         if (!solvable[till.size() - 1][value]) { // not possible to find solution
-            return null;
+            return new ArrayList<>();
         }
 
         // try to backtrack and find all possible solutions in order to select minimum
@@ -158,12 +157,12 @@ public class ChangeMachine {
 
     }
 
-    // bruteforce approach, too slow
+    // brute force approach, too slow
     public List<Integer> changeNaive(List<Integer> tillList, int value) {
         if (value <= 0) {
             throw new IllegalArgumentException("Value (" + value + ") should be positive.");
         }
-        if (tillList.size() == 0) {
+        if (tillList.isEmpty()) {
             throw new IllegalArgumentException("Till can't be empty.");
         }
 
