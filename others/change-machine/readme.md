@@ -1,7 +1,23 @@
-###Problem: create change machine
+# [Change Machine](https://en.wikipedia.org/wiki/Change-making_problem "https://en.wikipedia.org/wiki/Change-making_problem") 
 
-Task: calculate minimum number of UK coins which would sum up to given number
+# Task 
 
-Simple case: till has infinite coins of all denominations.
+Calculate minimum number of UK coins which would sum up to given number in pence.
 
-Challenging case: till has predefined number of coins. 
+# Simple case 
+
+Till has infinite coins of all denominations.
+
+input: target number - number of pence (for £1.30 = 130)
+
+output: combination of UK coins which would add to target value
+  
+
+# Challenging case
+ 
+Till has predefined number of coins.
+input: target number - number of pence (for £1.30 = 130), list of coins available in the till
+
+output: combination of coins from till which would add to target value
+
+ 
