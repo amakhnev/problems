@@ -14,8 +14,8 @@
   </properties>
   <packaging>pom</packaging>
   <modules>
-
-    <module>others</module>
+    <module>mics/change-machine</module>
+    <module>mics/words-dictionary</module>
   </modules>
 
 </project>
