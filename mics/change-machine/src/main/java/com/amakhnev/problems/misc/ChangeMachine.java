@@ -1,3 +1,5 @@
+package com.amakhnev.problems.misc;
+
 import java.util.*;
 
 public class ChangeMachine {
