@@ -2,7 +2,7 @@ package com.amakhnev.problems.interviewbit.math;
 
 public class ExcelColumnTitle {
     public String convertToTitle(int A) {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         int temp = A;
 
         while (temp > 0) {
