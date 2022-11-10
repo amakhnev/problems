@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /**
-* Problem link = https://www.interviewbit.com/problems/max-sum-contiguous-subarray/
-* Solution is to have a look if next element will increase the sum of current subarray   
-* a) if element increases previous subarray sum - we just continue subarray 
-* b) if element itself is bugger than previuos subarray + this element - that means we need to start new subarray, represented with this element
-* Solution executes with O(n) time complexity , O(1) additional space complexity
-*/
+ * Problem link = <a href="https://www.interviewbit.com/problems/max-sum-contiguous-subarray/">https://www.interviewbit.com/problems/max-sum-contiguous-subarray/</a>
+ * Solution is to have a look if next element will increase the sum of current subarray
+ * a) if element increases previous subarray sum - we just continue subarray
+ * b) if element itself is bugger than previuos subarray + this element - that means we need to start new subarray, represented with this element
+ * Solution executes with O(n) time complexity , O(1) additional space complexity
+ */
 public class MaxSumContiguousSubarray {
 
     public static void main(String[] args) {

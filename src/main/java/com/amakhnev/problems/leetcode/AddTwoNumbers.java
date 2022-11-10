@@ -24,7 +24,7 @@ public class AddTwoNumbers {
 
     }
 
-    private void printListNode(ListNode l) {
+    protected void printListNode(ListNode l) {
         StringBuilder sb = new StringBuilder();
         sb.append("(");
         while (l != null) {
@@ -38,7 +38,7 @@ public class AddTwoNumbers {
         System.out.println(sb.toString());
     }
 
-    private ListNode longToListNode(long a) {
+    protected ListNode longToListNode(long a) {
         if (a == 0) {
             return new ListNode(0);
         }
@@ -58,7 +58,7 @@ public class AddTwoNumbers {
         return first;
     }
 
-    private long listNodeToLong(ListNode l) {
+    protected long listNodeToLong(ListNode l) {
         long result = 0, pow = 1;
         while (l != null) {
             result += l.val * pow;

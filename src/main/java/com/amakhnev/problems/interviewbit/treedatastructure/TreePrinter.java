@@ -40,7 +40,7 @@ public class TreePrinter {
      * @param root tree root node
      */
     public static void print(PrintableNode root) {
-        List<List<String>> lines = new ArrayList<List<String>>();
+        List<List<String>> lines = new ArrayList<>();
 
         List<PrintableNode> level = new ArrayList<PrintableNode>();
         List<PrintableNode> next = new ArrayList<PrintableNode>();
